@@ -28,10 +28,10 @@ import BoxSponsoring from '@/components/BoxSponsoring.vue';
 import EndBaniere from '@/components/EndBaniere.vue';
 import Overview from '@/components/Overview.vue'
 
-document.addEventListener('wheel', (event) => {
-      event.preventDefault();
-      document.documentElement.scrollLeft += event.deltaY;
-    }, { passive: false });
+//document.addEventListener('wheel', (event) => {
+//     event.preventDefault();
+//      document.documentElement.scrollLeft += event.deltaY;
+//    }, { passive: false });
 
 export default {
   name: 'HomeView',
@@ -41,6 +41,35 @@ export default {
     //BoxSponsoring,
     EndBaniere
   },
+  mounted() {
+    // Gestion du scroll avec la molette de la souris
+    document.addEventListener('wheel', this.handleWheel, { passive: false });
+
+    // Gestion du slide trackpad avec le toucher
+    document.addEventListener('touchstart', this.handleTouchStart, { passive: true });
+    document.addEventListener('touchmove', this.handleTouchMove, { passive: false });
+  },
+  methods: {
+    handleWheel(event) {
+      event.preventDefault();
+      document.documentElement.scrollLeft += event.deltaY;
+    },
+    handleTouchStart(event) {
+      this.startX = event.touches[0].clientX;
+    },
+    handleTouchMove(event) {
+      event.preventDefault();
+      let touchX = event.touches[0].clientX;
+      let deltaX = this.startX - touchX;
+      document.documentElement.scrollLeft += deltaX * 1.5; // Facteur pour ajuster la vitesse
+      this.startX = touchX;
+    }
+  },
+  beforeUnmount() {
+    document.removeEventListener('wheel', this.handleWheel);
+    document.removeEventListener('touchstart', this.handleTouchStart);
+    document.removeEventListener('touchmove', this.handleTouchMove);
+  }
 } 
 </script>
 
