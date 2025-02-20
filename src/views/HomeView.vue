@@ -2,7 +2,7 @@
   <div class="home">
     <section>
       <Baniere class="nav"/>
-      <Overview class="p1-content" msg="HARMONIE DE SAINT PRIEST EN JAREZ"/>
+      <Overview class="p1-content" msg=""/>
       <BoxSponsoring class="p1-sponso"/>
     </section>
     <section>  
@@ -84,8 +84,8 @@ export default {
   section{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-end;
     flex: none;
     height: 100vh;
     width: 100%;
@@ -109,7 +109,10 @@ export default {
   }
 
   section:nth-child(1){
-    background-color:  rgb(255, 249, 241)
+    background: url('/src/assets/pexels-snapwire-358731.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: 40% center;
+    filter: grayscale(100%);
   }
 
   section:nth-child(2){
