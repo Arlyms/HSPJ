@@ -2,9 +2,9 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      Nous sommes un groupe de plus de 50 musiciens<br> sous la baguette de notre directeur musical <strong>Eric Bernoux</strong><br>
+      L&apos;harmonie a été formée en 1993. Au cours des années,<br> notre programme s&apos;est amusé de morceaux parfois simples et entraînants,<br>parfois plus techniques et rigoureux, allant des ballades les plus calmes<br> aux classiques les plus virtuoses, en passant par les incontournables musiques de films.
+      <!-- <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.-->
     </p>
   </div>
 </template>
@@ -20,6 +20,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello {
+  padding: 50px;
+  margin: 100px;
+  background: url('/src/assets/banner/paper.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+p{
+  text-align: justify;
+}
+
 h3 {
   margin: 40px 0 0;
 }
