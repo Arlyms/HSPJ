@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <img :src="imageUrl" alt="Dynamic Image" />
     <p>
       Nous sommes un groupe de plus de 50 musiciens<br> sous la baguette de notre directeur musical <strong>Eric Bernoux</strong><br>
       L&apos;harmonie a été formée en 1993. Au cours des années,<br> notre programme s&apos;est amusé de morceaux parfois simples et entraînants,<br>parfois plus techniques et rigoureux, allant des ballades les plus calmes<br> aux classiques les plus virtuoses, en passant par les incontournables musiques de films.
@@ -13,7 +14,8 @@
 export default {
   name: 'Overview',
   props: {
-    msg: String
+    msg: String,
+    imageUrl: String
   }
 }
 </script>

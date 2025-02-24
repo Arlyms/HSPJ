@@ -2,13 +2,13 @@
   <div class="home">
     <section>
       <Baniere class="nav"/>
-      <Overview class="p1-content" msg=""/>
+      <Overview class="p1-content" msg=" I LOVE U" imageUrl="/assetsDynamic/chat.jpg"/>
       <BoxSponsoring class="p1-sponso"/>
     </section>
     <section>  
       <div class="deuxieme page">
-        <h2>C'est la page 2</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae libero molestiae nesciunt minus quam animi sequi sunt. Molestias at perferendis omnis facere sit nulla corrupti fugit quis nihil. Consectetur, error.</p>
+        <Card title="Blabla"
+              description="Blablabla"/>
       </div>
     </section>
     <section>
@@ -27,11 +27,7 @@ import Baniere from '@/components/Baniere.vue';
 import BoxSponsoring from '@/components/BoxSponsoring.vue';
 import EndBaniere from '@/components/EndBaniere.vue';
 import Overview from '@/components/Overview.vue'
-
-//document.addEventListener('wheel', (event) => {
-//     event.preventDefault();
-//      document.documentElement.scrollLeft += event.deltaY;
-//    }, { passive: false });
+import Card from '@/components/Card.vue'
 
 export default {
   name: 'HomeView',
@@ -39,7 +35,8 @@ export default {
     Baniere,
     Overview, 
     //BoxSponsoring,
-    EndBaniere
+    EndBaniere,
+    Card
   },
   mounted() {
     // Gestion du scroll avec la molette de la souris
