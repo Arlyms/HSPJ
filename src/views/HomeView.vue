@@ -1,28 +1,54 @@
 <template>
   <div class="home">
     <section>
-      <Baniere class="nav"/>
-      <Overview class="p1-content" msg=" I LOVE U" imageUrl="/assetsDynamic/chat.jpg"/>
+      <Nav/>
+      <Baniere class="navigation"/>
+      <Overview class="p1-content"  msg=" I LOVE U" />
+    </section>
+    <section class="deuxieme-page"> 
+      <h2>Représentation Année 2025</h2>
+        <div class="cards-container">
+          <Card imageUrl="/assetsDynamic/sax.jpg"
+                tittle="Concert"
+                description="Invitation de l'Harmonie de la Chazotte"
+                date="Sam. 15 mar"
+                place="La Talaudière"/>
+          <Card imageUrl="/assetsDynamic/sax.jpg"
+                tittle="Commémoration"
+                date="Mer. 19 mar"
+                place="St Priest en Jarez"/>
+          <Card imageUrl="/assetsDynamic/sax.jpg"
+                tittle="Concert"
+                description="Invitation de l'Harmonie de Côte Chaude"
+                date="Sam. 5 avr"
+                place="St Genest Lerps"/>
+          <Card imageUrl="/assetsDynamic/sax.jpg"
+                tittle="Commémoration"
+                date="Jeu. 8 mai"
+                place="St Priest en Jarez"/>
+          <Card imageUrl="/assetsDynamic/sax.jpg"
+                tittle="Concert Annuel"
+                description="Au NEC"
+                date="Sam. 17 mai"
+                place="St Priest en Jarez"/> 
+          <Card imageUrl="/assetsDynamic/sax.jpg"
+                tittle="Fête de la musique"
+                date="Sam. 21 jun"
+                place="St Priest en Jarez"/>  
+          </div>          
+    </section>
+    <section class="troisieme page">
+        <!--<h2>C'est la page 3</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quas, asperiores non molestias accusamus possimus eos voluptatum, nam labore rem accusantium dolorum odio nulla corporis ex voluptas modi distinctio placeat.</p>-->
       <BoxSponsoring class="p1-sponso"/>
-    </section>
-    <section>  
-      <div class="deuxieme page">
-        <Card title="Blabla"
-              description="Blablabla"/>
-      </div>
-    </section>
-    <section>
-      <div class="troisieme page">
-        <h2>C'est la page 3</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quas, asperiores non molestias accusamus possimus eos voluptatum, nam labore rem accusantium dolorum odio nulla corporis ex voluptas modi distinctio placeat.</p>
-      </div>
       <EndBaniere class="end"/>
     </section>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+
+import Nav from './Nav.vue';
 import Baniere from '@/components/Baniere.vue';
 import BoxSponsoring from '@/components/BoxSponsoring.vue';
 import EndBaniere from '@/components/EndBaniere.vue';
@@ -34,10 +60,12 @@ export default {
   components: {
     Baniere,
     Overview, 
-    //BoxSponsoring,
+    BoxSponsoring,
     EndBaniere,
-    Card
+    Card,
+    Nav
   },
+
   mounted() {
     // Gestion du scroll avec la molette de la souris
     document.addEventListener('wheel', this.handleWheel, { passive: false });
@@ -80,7 +108,6 @@ export default {
 
   section{
     display: flex;
-    flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
     flex: none;
@@ -89,7 +116,7 @@ export default {
     color:#292929;
     position: relative;
   }
-  .nav{
+  .navigation{
     position: fixed;
     left: 0;
     z-index: 2;
@@ -100,6 +127,11 @@ export default {
     right: 0;
     z-index: 2;
   }
+
+  .p1-content{
+
+  }
+
   .p1-sponso{
     position: absolute;
     bottom: 0;
@@ -109,15 +141,26 @@ export default {
     background: url('/src/assets/pexels-snapwire-358731.jpg') no-repeat center center;
     background-size: cover;
     background-position: 40% center;
-    filter: grayscale(100%);
+   //Filter: grayscale(100%);
+  }
+  .deuxieme-page{
+    background-color:rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 
-  section:nth-child(2){
-    background-color:  rgb(255, 249, 241)
-  } 
+  .cards-container{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+    }
+
 
   section:nth-child(3){
-    background-color:  #fff9f1
+    background-color: rgb(255, 255, 255);
   } 
+
 
 </style>

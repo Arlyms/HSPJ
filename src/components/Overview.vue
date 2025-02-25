@@ -1,11 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <img :src="imageUrl" alt="Dynamic Image" />
     <p>
       Nous sommes un groupe de plus de 50 musiciens<br> sous la baguette de notre directeur musical <strong>Eric Bernoux</strong><br>
       L&apos;harmonie a été formée en 1993. Au cours des années,<br> notre programme s&apos;est amusé de morceaux parfois simples et entraînants,<br>parfois plus techniques et rigoureux, allant des ballades les plus calmes<br> aux classiques les plus virtuoses, en passant par les incontournables musiques de films.
-      <!-- <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.-->
     </p>
   </div>
 </template>
@@ -20,18 +18,19 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+
+<style lang="scss" scoped>
 .hello {
-  padding: 50px;
-  margin: 100px;
+  padding: 5vh;
+  margin: 10vw;
   background: url('/src/assets/banner/paper.jpg') no-repeat center center;
   background-size: cover;
-  border-radius: 20px;
+  // border-radius: 20px;
 }
 
 p{
   text-align: justify;
+  font-size: 1.5rem; 
 }
 
 h3 {
@@ -46,6 +45,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #a70000; /* couleur scopé au copomnent*/
+  color: #a70000; 
 }
+
 </style>

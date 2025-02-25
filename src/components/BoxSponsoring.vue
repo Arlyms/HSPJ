@@ -14,18 +14,6 @@
                 <img src="../assets/sponsors/mutueNB.png" alt="logo du credit mutuel">
                 <img src="../assets/sponsors/TardyNB.png" alt="logo du cabinet tardy immobilier">
             </div>
-            <div class="logos">
-                <img src="../assets/sponsors/departementNB.png" alt="logo du departement de la loire">
-                <img src="../assets/sponsors/MairieNB.png" alt="logo de la mairie de saint priest en jarez">
-                <img src="../assets/sponsors/mutueNB.png" alt="logo du credit mutuel">
-                <img src="../assets/sponsors/TardyNB.png" alt="logo du cabinet tardy immobilier">
-            </div>
-            <div class="logos">
-                <img src="../assets/sponsors/departementNB.png" alt="logo du departement de la loire">
-                <img src="../assets/sponsors/MairieNB.png" alt="logo de la mairie de saint priest en jarez">
-                <img src="../assets/sponsors/mutueNB.png" alt="logo du credit mutuel">
-                <img src="../assets/sponsors/TardyNB.png" alt="logo du cabinet tardy immobilier">
-            </div>
         </div>
     </div>
 </template>
@@ -38,7 +26,8 @@ export default {
 
 <style lang="scss" scoped>
 
-#baniere   {     
+#baniere   {    
+    width: 66%; 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -47,6 +36,7 @@ export default {
     }
     .baniere-animation{
         overflow: hidden;
+        margin-bottom: 50px;
         padding: 15px 0;
         background-color: rgb(255, 255, 255);
         white-space: nowrap;
