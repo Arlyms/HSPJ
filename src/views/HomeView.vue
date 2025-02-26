@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <section>
-      <Nav/>
+      <ProgressBar/>
       <Baniere class="navigation"/>
-      <Overview class="p1-content"  msg=" I LOVE U" />
+      <Overview class="p1-content"/>
     </section>
     <section class="deuxieme-page"> 
       <h2>Représentation Année 2025</h2>
@@ -37,10 +37,13 @@
                 place="St Priest en Jarez"/>  
           </div>          
     </section>
-    <section class="troisieme page">
+    <section class="troisieme-page">
         <!--<h2>C'est la page 3</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quas, asperiores non molestias accusamus possimus eos voluptatum, nam labore rem accusantium dolorum odio nulla corporis ex voluptas modi distinctio placeat.</p>-->
-      <BoxSponsoring class="p1-sponso"/>
+      <div class="sponsor">
+        <h3 class="sponsor-tittle">Un grand <br> merci à nos partenaires</h3>
+        <BoxSponsoring class="sponsor-content"/>
+      </div>
       <EndBaniere class="end"/>
     </section>
   </div>
@@ -48,7 +51,7 @@
 
 <script>
 
-import Nav from './Nav.vue';
+import ProgressBar from '@/components/ProgressBar.vue';
 import Baniere from '@/components/Baniere.vue';
 import BoxSponsoring from '@/components/BoxSponsoring.vue';
 import EndBaniere from '@/components/EndBaniere.vue';
@@ -63,7 +66,7 @@ export default {
     BoxSponsoring,
     EndBaniere,
     Card,
-    Nav
+    ProgressBar
   },
 
   mounted() {
@@ -109,7 +112,7 @@ export default {
   section{
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    //
     flex: none;
     height: 100vh;
     width: 100%;
@@ -132,16 +135,14 @@ export default {
 
   }
 
-  .p1-sponso{
-    position: absolute;
-    bottom: 0;
-  }
+
 
   section:nth-child(1){
     background: url('/src/assets/pexels-snapwire-358731.jpg') no-repeat center center;
     background-size: cover;
     background-position: 40% center;
    //Filter: grayscale(100%);
+    justify-content: flex-end;  
   }
   .deuxieme-page{
     background-color:rgb(255, 255, 255);
@@ -158,9 +159,23 @@ export default {
     }
 
 
-  section:nth-child(3){
+  .troisieme-page{
     background-color: rgb(255, 255, 255);
-  } 
+    position: relative;
+    .sponsor{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      .sponsor-tittle{
+
+        width: 33vw;      }
+      .sponsor-content{
+        width: 66vw;
+      }
+    } 
+  }
 
 
 </style>
